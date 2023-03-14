@@ -15,9 +15,7 @@ function romanToInt(s) {
         const currentNum = romanNumerals[s[i]]; 
         const previousNum = romanNumerals[s[i+1]]; 
 
-        if (currentNum < previousNum)
-            result -= currentNum;
-        else result += currentNum;
+        (currentNum < previousNum) ? result -= currentNum : result += currentNum;
     }
     return result; 
 }
