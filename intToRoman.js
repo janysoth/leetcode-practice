@@ -1,34 +1,3 @@
-// Convert Roman Numerals to Integers
-function romanToInt(s) {
-    const romanNumerals = {
-        I: 1,
-        V: 5,
-        X: 10,
-        L: 50,
-        C: 100, 
-        D: 500,
-        M: 1000,
-    }
-
-    let result = 0;
-
-    for (let i = 0; i < s.length; i++){
-        const currentNum = romanNumerals[s[i]]; 
-        const previousNum = romanNumerals[s[i+1]]; 
-
-        (currentNum < previousNum) ? result -= currentNum : result += currentNum;
-    }
-    return result; 
-}
-
-let romanArray = [];
-romanArray.push('III');
-romanArray.push('LVIII');
-romanArray.push('MCMXCIV');
-romanArray.push('MCMLXXXIX');
-
-romanArray.forEach((string) => console.log(romanToInt(string)));
-
 // Convert Integer to Roman Numerals
 // function intToRoman(num){
 // const romanNumerals = {M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 }
@@ -65,7 +34,3 @@ intArray.push(1989);
 intArray.push(2023);
 
 intArray.forEach((num) => console.log(intToRoman(num)));
-
-
-
-
