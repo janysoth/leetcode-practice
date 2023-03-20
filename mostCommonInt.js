@@ -4,7 +4,7 @@ function findMostCommonInt(arraySize){
     let mostCount = 0; // The amount of the frequent element shown in the array
     let mostElement = []; 
     let randomArray = generateRandomArray(arraySize);
-    //let randomArray =[5,8,4,9,8,4,10,10];
+    //let randomArray =[5,8,4,9,9,8,5,4,10,10];
     // let randomArray = [];
 
     // Generate random num 1-10 and push into the array
@@ -28,7 +28,7 @@ function findMostCommonInt(arraySize){
     The number ${mostElement} has shown the most,  ${mostCount} times.`);
 }
 
-function generateRandomArray (arraySize) {
+const generateRandomArray = (arraySize) => {
     let randomArray = [];
     for (let i = 0; i < arraySize; i++)
         randomArray.push(Math.floor(Math.random()*11));
