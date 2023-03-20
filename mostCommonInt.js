@@ -3,12 +3,13 @@ function findMostCommonInt(arraySize){
     const commonCount = {}; // The object to store each element's frequency
     let mostCount = 0; // The amount of the frequent element shown in the array
     let mostElement = []; 
-    let randomArray = generateArray(arraySize);
+    let randomArray = generateRandomArray(arraySize);
+    //let randomArray =[5,8,4,9,8,4,10,10];
+    // let randomArray = [];
 
     // Generate random num 1-10 and push into the array
     // for (let i = 0; i < arraySize; i++)
     //     randomArray.push(Math.floor(Math.random()*11));
-    //generateArray(arraySize);
 
     // Store the frequency of each element in the commonCount object
     for (const num of randomArray)
@@ -16,7 +17,7 @@ function findMostCommonInt(arraySize){
 
     // To Check if there's a tie, show the largest element
     for (const [key, count] of Object.entries(commonCount)){
-        if (count > mostCount || (count === mostCount && key > mostElement)){
+        if (count >= mostCount || (count === mostCount && key > mostElement)){
         mostCount = count;
         mostElement = key;
         }
@@ -27,12 +28,11 @@ function findMostCommonInt(arraySize){
     The number ${mostElement} has shown the most,  ${mostCount} times.`);
 }
 
-
-function generateArray (arraySize) {
+function generateRandomArray (arraySize) {
     let randomArray = [];
     for (let i = 0; i < arraySize; i++)
         randomArray.push(Math.floor(Math.random()*11));
     return randomArray;
 }
 
-findMostCommonInt(10);
+findMostCommonInt(4);
