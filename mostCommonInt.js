@@ -34,26 +34,28 @@
 function mostCommonInt (arraySize){
     let maxCount = 0;
     let randomArray = generateRandomArray(arraySize);
-    let mostCommon = randomArray[0];
+    let mostCommonNum = randomArray[0];
 
     for (let i = 0; i < randomArray.length; i++) {
         let count = 0;
+
+        // To Count How Many Time Each Number appears in the array:
         for (let j = 0; j < randomArray.length; j++){
             if (randomArray[i] === randomArray[j])
                 count++;
         }
 
         // If there's tie, it will return the largest integer:
-        if (count > maxCount || (count === maxCount && randomArray[i] > mostCommon)) {
+        if (count > maxCount || (count === maxCount && randomArray[i] > mostCommonNum)) {
             maxCount = count;
-            mostCommon = randomArray[i];
+            mostCommonNum = randomArray[i];
         } 
     }
     return console.log(`Here's the array {${randomArray}}.
-    The number ${mostCommon} has shown the most,  ${maxCount} times.`); 
+    The number ${mostCommonNum} has shown the most,  ${maxCount} times.`); 
 }
 
-// To Generate a random array take in arraySize:
+// To Generate a random array giving the arraySize:
 const generateRandomArray = (arraySize) => {
     let randomArray = [];
     for (let i = 0; i < arraySize; i++)
@@ -61,4 +63,4 @@ const generateRandomArray = (arraySize) => {
     return randomArray;
 }
 
-mostCommonInt(4);
+mostCommonInt(1);
