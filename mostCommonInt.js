@@ -1,8 +1,8 @@
 
 function mostCommonInt(arraySize){
     const commonNumber = []; // The array to store each element's frequency
-    let mostCount = 0; // The amount of the frequent element shown in the array
-    let mostElement = []; 
+    let maxCount = 0; // The amount of the frequent element shown in the array
+    let mostCommonInt = []; 
     let randomArray = generateRandomArray(arraySize);
 
     // Store the frequency of each element in the commonCount object
@@ -13,15 +13,15 @@ function mostCommonInt(arraySize){
 
     // To Check if there's a tie, show the largest element
     for (const [key, count] of Object.entries(commonNumber)){
-        if (count >= mostCount || (count === mostCount && key > mostElement)){
-        mostCount = count;
-        mostElement = key;
+        if (count >= maxCount || (count === maxCount && key > mostCommonInt)){
+        maxCount = count;
+        mostCommonInt = key;
         }
     }
     
     //return Number(mostElement); // To covert an element to a number
     return console.log(`Here's the array {${randomArray}}.
-    The number ${mostElement} has shown the most,  ${mostCount} times.`);
+    The number ${mostCommonInt} has shown the most,  ${maxCount} times.`);
 }
 
 const generateRandomArray = (arraySize) => {
