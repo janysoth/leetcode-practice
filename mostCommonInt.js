@@ -1,4 +1,5 @@
 let names = ['Max', 'Brian', 'Jonny'];
+
 function mostCommonInt(arraySize){
     const commonNumber = []; // The array to store each element's frequency
     let maxCount = 0; // The amount of the frequent element shown in the array
@@ -19,11 +20,16 @@ function mostCommonInt(arraySize){
         }
     }
     
+    let duplicateName = showName(maxCount);
+
     //return Number(mostElement); // To covert an element to a number
     return console.log(`Here's the array {${randomArray}}.
-    The number ${mostCommonInt} has shown the most,  ${maxCount} times.`);
+    The number ${mostCommonInt} has shown the most,  ${maxCount} times.
+    
+    ${duplicateName} `);
 }
 
+// To Generate Random Array given the size:
 const getRandomArray = (arraySize) => {
     let myArray = [];
     for (let i = 0; i < arraySize; i++)
@@ -31,13 +37,20 @@ const getRandomArray = (arraySize) => {
     return myArray;
 }
 
-const getName = (maxCount) => {
+// To display name the same amount as the common integer:
+const showName = (maxCount) => {
 	let name = getRandomName(names);
   const nameArray= [];
   for (let i = 0; i < maxCount; i++)
   	nameArray.push(name);
   return nameArray;
 } 
+
+// To Get Random Name from Given Array:
+function getRandomName (array){
+	const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
 
 mostCommonInt(4);
 
