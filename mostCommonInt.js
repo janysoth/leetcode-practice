@@ -1,9 +1,9 @@
-
+let names = ['Max', 'Brian', 'Jonny'];
 function mostCommonInt(arraySize){
     const commonNumber = []; // The array to store each element's frequency
     let maxCount = 0; // The amount of the frequent element shown in the array
     let mostCommonInt = []; 
-    let randomArray = generateRandomArray(arraySize);
+    let randomArray = getRandomArray(arraySize);
 
     // Store the frequency of each element in the commonCount object
     // for (const num of randomArray)
@@ -24,12 +24,20 @@ function mostCommonInt(arraySize){
     The number ${mostCommonInt} has shown the most,  ${maxCount} times.`);
 }
 
-const generateRandomArray = (arraySize) => {
+const getRandomArray = (arraySize) => {
     let myArray = [];
     for (let i = 0; i < arraySize; i++)
         myArray.push(Math.floor(Math.random()*11));
     return myArray;
 }
+
+const getName = (maxCount) => {
+	let name = getRandomName(names);
+  const nameArray= [];
+  for (let i = 0; i < maxCount; i++)
+  	nameArray.push(name);
+  return nameArray;
+} 
 
 mostCommonInt(4);
 
