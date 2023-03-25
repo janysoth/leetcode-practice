@@ -1,6 +1,7 @@
 function removeDuplicates (arraySize){
     let randomArray = getRandomArray(arraySize);
     let newArray = [...new Set(randomArray)];
+    newArray = newArray.sort(function(a,b){return a - b}); // Sort Array with Integers
 
     return console.log(`Here's the random arary: {${randomArray}}.
     The new array is {${newArray}}`); 
