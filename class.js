@@ -1,20 +1,20 @@
 class Movie {
-    constructor(title, year) {
-        this.title = title;
-        this.year = year;
+    constructor() {
+        this.title = '';
+        this.year = '';
+        this.director = '';
+        this.rating = '';
     } 
-    
-    Year(){
-        return this.year;
-    }
-
-    Titlte(){
-        return this.title;
-    }
-
 }
 
-const myMovie = new Movie('Cocaine Bear', 2023);
+const movie1 = new Movie();
+movie1.title = 'Cocaine Bear';
+movie1.year = '2003';
+movie1.director = 'Jonny Vorn Soth';
+movie1.rating = 'R';
 
-let message = `"${myMovie.Titlte()}" came out in the year, ${myMovie.Year()}.`;
-console.log(message);
+
+const myMovies = [];
+
+myMovies.push(movie1);
+console.log(myMovies[0]);
